@@ -1,0 +1,321 @@
+/* ==========================================================================
+   LingoFlow Mobile Design System
+   Modern HSL Tokens, Glassmorphism, 3D Buttons & Ergonomic Mobile App
+   ========================================================================== */
+
+:root {
+  /* Core Brand Colors */
+  --bg-main: #0B0F19;
+  --bg-surface: #131B2E;
+  --bg-surface-elevated: #1A243B;
+  --bg-glass: rgba(26, 36, 59, 0.7);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(99, 102, 241, 0.4);
+
+  /* Functional Palette */
+  --color-primary: #6366F1;       /* Royal Indigo */
+  --color-primary-light: #818CF8;
+  --color-accent: #10B981;        /* Emerald Success */
+  --color-accent-light: #34D399;
+  --color-streak: #F59E0B;        /* Amber Flame */
+  --color-danger: #EF4444;        /* Rose Warning */
+  --color-info: #38BDF8;          /* Sky Blue */
+
+  /* Text Colors */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #8794AB;
+  --text-inverse: #0B0F19;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Dimensions & Radius */
+  --app-max-width: 440px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows & Physics */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 24px rgba(99, 102, 241, 0.25);
+  --shadow-accent-glow: 0 0 24px rgba(16, 185, 129, 0.25);
+
+  /* Bottom Nav Height */
+  --bottom-nav-height: 72px;
+
+  /* Nền NGOÀI khung điện thoại.
+     Trước 02/09/2026 hai màu này đóng đinh thẳng trong `html, body` và
+     `.mobile-app-wrapper`, KHÔNG qua biến — nên bật giao diện sáng thì thẻ đổi
+     màu mà nền quanh nó vẫn gần đen. Đưa vào biến để cả hai bảng cùng điều
+     khiển được. */
+  --bg-shell: #05070D;
+  --bg-shell-glow: #151C33;
+  /* Lớp phủ sau hộp thoại. Cũng từng đóng đinh `rgba(5,7,13,0.92)` ngay trong
+     JSX, nên bật nền sáng thì thẻ sáng mà quanh nó vẫn đen kịt. */
+  --bg-overlay: rgba(5, 7, 13, 0.92);
+  --bg-tint: rgba(0, 0, 0, 0.25);
+}
+
+/* Bảng màu SÁNG.
+   Khối này có từ đầu kèm chú thích "optional toggle", nhưng đo 02/09/2026:
+   KHÔNG dòng mã nào đặt `data-theme`, và không nút nào bật nó — cái toggle ấy
+   chưa từng tồn tại, nên người học chỉ từng thấy nền #0B0F19. Nay
+   `useUserStore.applyTheme()` gắn thuộc tính này, và nút Mặt trời/Mặt trăng ở
+   `MobileHeader` bật tắt. Mặc định là SÁNG. */
+[data-theme="light"] {
+  --bg-shell: #E2E8F0;
+  --bg-shell-glow: #FFFFFF;
+  --bg-overlay: rgba(71, 85, 105, 0.55);
+  --bg-tint: rgba(15, 23, 42, 0.06);
+  --bg-main: #F1F5F9;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F8FAFC;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+
+  /* Bảy màu nhấn dưới đây chỉnh cho nền ĐEN. Bản sáng trước 03/09/2026 định
+     nghĩa lại 11 biến nền/chữ mà bỏ nguyên chúng, nên đo bằng tỉ số tương phản
+     WCAG trên màn hình Lộ Trình: nền sáng hỏng 24/39 chỗ chữ, nền tối hỏng
+     11/39 — bảng sáng TỆ HƠN bảng nó thay thế. Số kèm mỗi dòng là tỉ số trên
+     `--bg-main` #F1F5F9; ngưỡng chữ thường là 4.5. */
+  --text-muted: #5B6779;          /* 2.34 -> 5.24 */
+  --color-primary: #4F46E5;       /* 4.08 -> 5.74 */
+  --color-primary-light: #4338CA; /* 2.72 -> 7.21 */
+  --color-accent: #047857;        /* 2.32 -> 5.01 */
+  --color-accent-light: #065F46;  /* 1.75 -> 7.01 */
+  --color-streak: #B45309;        /* 1.96 -> 4.58 */
+  --color-danger: #B91C1C;        /* 3.44 -> 5.91 */
+  --color-info: #0369A1;          /* 1.96 -> 5.42 */
+  --text-inverse: #FFFFFF;
+  --border-active: rgba(79, 70, 229, 0.45);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 24px rgba(79, 70, 229, 0.18);
+  --shadow-accent-glow: 0 0 24px rgba(4, 120, 87, 0.18);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-shell);
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* Responsive Mobile Frame Wrapper (Simulate Phone on Desktop) */
+.mobile-app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at 50% 20%, var(--bg-shell-glow) 0%, var(--bg-shell) 100%);
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .mobile-app-wrapper {
+    padding: 24px;
+  }
+}
+
+.mobile-device-container {
+  width: 100%;
+  max-width: var(--app-max-width);
+  height: 100vh;
+  background-color: var(--bg-main);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 640px) {
+  .mobile-device-container {
+    height: 880px;
+    border-radius: 40px;
+    border: 6px solid #1E293B;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Screen Content Area */
+.app-screen-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: calc(var(--bottom-nav-height) + 24px);
+  scroll-behavior: smooth;
+}
+
+.app-screen-scrollable::-webkit-scrollbar {
+  width: 4px;
+}
+.app-screen-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Header & Glassmorphic Elements */
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* 3D Pressable Button Styles */
+.btn-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.12s ease-in-out;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+}
+
+.btn-3d-primary {
+  background: linear-gradient(180deg, #6366F1 0%, #4F46E5 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 0 #3730A3, 0 6px 16px rgba(79, 70, 229, 0.4);
+}
+.btn-3d-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #3730A3, 0 3px 8px rgba(79, 70, 229, 0.3);
+}
+
+.btn-3d-accent {
+  background: linear-gradient(180deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 0 #047857, 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+.btn-3d-accent:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #047857, 0 3px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-3d-subtle {
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4);
+}
+.btn-3d-subtle:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Badge Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-accent-light);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-indigo {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--color-primary-light);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-streak);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Flip Card 3D Effect */
+.flip-card-perspective {
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Waveform Canvas Container */
+.waveform-box {
+  background: #090D16;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.recording-pulse {
+  animation: pulse-ring 1.6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.floating-element {
+  animation: float 3s ease-in-out infinite;
+}

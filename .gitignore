@@ -1,0 +1,30 @@
+# Node & Dependencies
+node_modules/
+.npm/
+
+# Build outputs (we keep dist/CatY_English.apk if needed or build via CI)
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/
+android/captures/
+android/gradle/
+android/*.iml
+android/app/*.iml
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

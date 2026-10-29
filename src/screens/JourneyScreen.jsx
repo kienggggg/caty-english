@@ -209,7 +209,7 @@ export const JourneyScreen = () => {
               Cài Đặt App Cho Điện Thoại Android
             </div>
             <div style={{ fontSize: '0.68rem', color: 'var(--text-secondary)' }}>
-              Bản APK chính thức (8.96 MB) • Học mượt mà mọi lúc mọi nơi
+              Bản APK chính thức (4.73 MB) • Học mượt mà mọi lúc mọi nơi
             </div>
           </div>
         </div>

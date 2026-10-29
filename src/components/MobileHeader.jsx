@@ -60,7 +60,7 @@ export const MobileHeader = () => {
         <a
           href="./CatY_English.apk"
           download="CatY_English.apk"
-          title="Tải ứng dụng Android (.APK 8.96MB)"
+          title="Tải ứng dụng Android (.APK 4.73MB)"
           style={{
             display: 'flex',
             alignItems: 'center',

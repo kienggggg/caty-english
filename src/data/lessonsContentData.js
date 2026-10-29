@@ -625,7 +625,7 @@ export const LESSONS_CONTENT = {
 
   18: {
     id: 18,
-    title: 'Bài 18: Tốt Nghiệp Khóa Xóa Mất Gốc LingoFlow',
+    title: 'Bài 18: Tốt Nghiệp Khóa Xóa Mất Gốc CatY English',
     stageId: 3,
     isGraduation: true,
     steps: [

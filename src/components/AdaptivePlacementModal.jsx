@@ -108,10 +108,10 @@ export const AdaptivePlacementModal = () => {
                 <Sparkles size={28} color="#FFFFFF" />
               </div>
               <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-primary)' }}>
-                Chào Mừng Bạn Đến LingoFlow!
+                Chào Mừng Bạn Đến CatY! 🐱
               </h2>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '6px', lineHeight: 1.4 }}>
-                Ứng dụng học tiếng Anh xoá tan nỗi sợ phát âm, âm đuôi và cảm giác đi mãi không thấy thành quả.
+                Học tiếng Anh kỷ luật cùng chú mèo cam: Xoá tan nỗi sợ phát âm, đối luyện AI và cam kết hoàn thành mục tiêu.
               </p>
             </div>
 

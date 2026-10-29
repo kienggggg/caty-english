@@ -50,7 +50,7 @@ export const ROADMAP_STAGES = [
       { id: 15, title: 'Bài 15: Tình huống 1: Gọi cà phê & Đồ ăn trưa', xp: 40, type: 'dialogue' },
       { id: 16, title: 'Bài 16: Tình huống 2: Check-in sân bay & Khách sạn', xp: 40, type: 'dialogue' },
       { id: 17, title: 'Bài 17: Tình huống 3: Hỏi đường & Mua sắm', xp: 40, type: 'dialogue' },
-      { id: 18, title: 'Bài 18: Tốt Nghiệp Khóa Xóa Mất Gốc LingoFlow', xp: 100, type: 'graduation' }
+      { id: 18, title: 'Bài 18: Tốt Nghiệp Khóa Xóa Mất Gốc CatY English', xp: 100, type: 'graduation' }
     ]
   },
   {

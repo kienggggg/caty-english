@@ -91,8 +91,8 @@ export const CertificateModal = ({ isOpen, onClose, stageTitle = 'Chặng 1: Th�
     ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
     ctx.font = '13px "Plus Jakarta Sans", sans-serif';
     const issueDate = new Date().toLocaleDateString('vi-VN');
-    ctx.fillText(`Ngày cấp: ${issueDate}   |   Mã xác thực: LF-${Date.now().toString(36).toUpperCase()}`, 400, 480);
-    ctx.fillText('Được bảo chứng bởi công nghệ Audio Mirror — LingoFlow Mobile', 400, 502);
+    ctx.fillText(`Ngày cấp: ${issueDate}   |   Mã xác thực: CY-${Date.now().toString(36).toUpperCase()}`, 400, 480);
+    ctx.fillText('Được bảo chứng bởi CatY English — Học Tiếng Anh Cùng Mèo Kỷ Luật', 400, 502);
   };
 
   // Tải ảnh chứng chỉ về máy
@@ -100,7 +100,7 @@ export const CertificateModal = ({ isOpen, onClose, stageTitle = 'Chặng 1: Th�
     const canvas = canvasRef.current;
     if (!canvas) return;
     const link = document.createElement('a');
-    link.download = `LingoFlow_ChungChi_${Date.now()}.png`;
+    link.download = `CatY_ChungChi_${Date.now()}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
   };
@@ -112,11 +112,11 @@ export const CertificateModal = ({ isOpen, onClose, stageTitle = 'Chặng 1: Th�
 
     if (navigator.share && canvas.toBlob) {
       canvas.toBlob(async (blob) => {
-        const file = new File([blob], 'lingoflow_certificate.png', { type: 'image/png' });
+        const file = new File([blob], 'caty_certificate.png', { type: 'image/png' });
         try {
           await navigator.share({
-            title: 'Chứng Chỉ LingoFlow của Tôi!',
-            text: `Tôi vừa hoàn thành xuất sắc ${stageTitle} trên ứng dụng LingoFlow!`,
+            title: 'Chứng Chỉ CatY English của Tôi!',
+            text: `Tôi vừa hoàn thành xuất sắc ${stageTitle} trên ứng dụng CatY English!`,
             files: [file]
           });
         } catch (e) {}

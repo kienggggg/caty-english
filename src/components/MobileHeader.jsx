@@ -58,9 +58,9 @@ export const MobileHeader = () => {
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         {/* Nút Tải APK Android */}
         <a
-          href="/CatY_English.apk"
+          href="./CatY_English.apk"
           download="CatY_English.apk"
-          title="Tải ứng dụng Android (.APK 4.58MB)"
+          title="Tải ứng dụng Android (.APK 8.96MB)"
           style={{
             display: 'flex',
             alignItems: 'center',

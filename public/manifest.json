@@ -1,14 +1,14 @@
 {
-  "short_name": "LingoFlow",
-  "name": "LingoFlow - Tiếng Anh Cho Người Mới Bắt Đầu",
+  "short_name": "CatY English",
+  "name": "CatY - Học Tiếng Anh Cùng Mèo Kỷ Luật",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "./favicon.svg",
       "type": "image/svg+xml",
       "sizes": "192x192 512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "./",
   "background_color": "#0F172A",
   "theme_color": "#0F172A",
   "display": "standalone",

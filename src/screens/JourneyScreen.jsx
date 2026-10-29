@@ -188,7 +188,7 @@ export const JourneyScreen = () => {
 
       {/* Banner Tải App Android APK */}
       <a
-        href="/CatY_English.apk"
+        href="./CatY_English.apk"
         download="CatY_English.apk"
         style={{
           background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.12))',
@@ -209,7 +209,7 @@ export const JourneyScreen = () => {
               Cài Đặt App Cho Điện Thoại Android
             </div>
             <div style={{ fontSize: '0.68rem', color: 'var(--text-secondary)' }}>
-              Bản APK chính thức (4.58 MB) • Học mượt mà mọi lúc mọi nơi
+              Bản APK chính thức (8.96 MB) • Học mượt mà mọi lúc mọi nơi
             </div>
           </div>
         </div>
